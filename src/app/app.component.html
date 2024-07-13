@@ -1,9 +1,12 @@
 <div class="container mt-5">
-    <div class="alert alert-primary" role="alert">
-        <i class="bi bi-arrow-through-heart-fill"></i>Angular 101
+    <div class="container text-center">{{title}}</div>
+    <div class="container text-center">
+        <img [src]="imageCoverUrl"class="rounded">
     </div>
-    <button routerLink="/" type="button" class="btn btn-primary m-1">Home</button>
-    <button routerLink="/page1" type="button" class="btn btn-success m-1">page1</button>
-    <button routerLink="/page2" type="button" class="btn btn-success m-1">page2</button>
+    <div class="text-center">
+        <button routerLink="/" type="button" class="btn btn-primary m-1">Home</button>
+        <button routerLink="/page1" type="button" class="btn btn-success m-1">page1</button>
+        <button routerLink="/page2" type="button" class="btn btn-success m-1">page2</button>
+    </div>
 </div>
 <router-outlet />

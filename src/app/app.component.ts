@@ -8,5 +8,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular_workshop';
+  title = 'Todo_List';
+  imageCoverUrl = '/images/todo-list.png'
 }
