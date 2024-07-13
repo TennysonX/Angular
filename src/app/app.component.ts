@@ -10,4 +10,12 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'Todo_List';
   imageCoverUrl = '/images/todo-list.png'
+  onimageClick(){
+    alert("ใครกดเป็นเกย์")
+  }
+  major = "programmer"
+  items = [
+    "A","B","C","D","E"
+  ]
+  size = "M"
 }
