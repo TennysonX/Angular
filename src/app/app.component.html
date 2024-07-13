@@ -4,16 +4,40 @@
         <img [src]="imageCoverUrl" class="rounded">
     </div>
     <div class="container mt-5">
-        <div>
+        <div class="container mt-5">
             @if(major != ""){
                 <div>Major : {{major}}</div>
             }
         </div>
-        <div>
+        <div class="container mt-5">
             @for(item of items; track $index){
                 <div>{{$index}} {{item}}</div>
             }
         </div>
+    </div>
+    <div class="container mt-5">
+        @for(size of sizelist; track $index){
+            @switch (size) {
+                @case ("S") {
+                    <div>Size S</div>
+                }
+                @case ("M") {
+                    <div>Size M</div>
+                }
+                @case ("L") {
+                    <div>Size L</div>
+                }
+                @case ("XL") {
+                    <div>Size XL</div>
+                }
+                @case ("XXL") {
+                    <div>Size XXL</div>
+                }
+                @default {
+                    <div>Oversized</div>
+                }
+            }
+        }
     </div>
     <div class="text-center">
         <button routerLink="/" type="button" class="btn btn-primary m-1">Home</button>
