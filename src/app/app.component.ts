@@ -1,7 +1,7 @@
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormControl, FormGroup, Validators} from '@angular/forms';
 import { first } from 'rxjs';
 @Component({
   selector: 'app-root',
@@ -29,6 +29,18 @@ export class AppComponent {
 
   now = new Date()
   number = 1500.5
+
+  name = new FormControl('')
+
+  profileForm = new FormGroup({
+    firstName: new FormControl('',Validators.required),
+    lastName: new FormControl('',Validators.required)
+})
+
+  profileFormSubmit() {
+    console.log(this.profileForm.valid)
+    console.log(this.profileForm.value)
+  }
 
   empList = [
     { FirstName: "A", LastName: "Yen", Salary: "18000.5"},
