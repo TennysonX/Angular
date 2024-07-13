@@ -1,21 +1,25 @@
 <div class="container mt-5">
+    <b>Title Website</b>
     <div class="container text-center">{{title}}</div>
+    <div class="text-center">
+    <b>On Click Image</b>
+    </div>
     <div class="container text-center" (click)="onimageClick()">
         <img [src]="imageCoverUrl" class="rounded">
     </div>
-    <div class="container mt-5">
         <div class="container mt-5">
             @if(major != ""){
                 <div>Major : {{major}}</div>
             }
         </div>
         <div class="container mt-5">
+            <b>Loop List</b>
             @for(item of items; track $index){
                 <div>{{$index}} {{item}}</div>
             }
-        </div>
     </div>
     <div class="container mt-5">
+        <b>Switch Case (Loop List)</b>
         @for(size of sizelist; track $index){
             @switch (size) {
                 @case ("S") {
@@ -38,6 +42,47 @@
                 }
             }
         }
+    </div>
+
+    <div class="container mt-5">
+        <b>Date Input</b>
+        <div>{{now}}</div>
+        <div>{{now|date}}</div>
+        <div>{{now|date : 'shortDate'}}</div>
+    </div>
+
+    <div class="container mt-5">
+        <b>Demicals number</b>
+        <div>{{number}}</div>
+        <div>{{number|number}}</div>
+        <div>{{number| number : '1.2-2'}}</div>
+    </div>
+
+    <div class="container mt-5">
+        <b>Create Table</b>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>#</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (emp of empList; track $index){
+                <tr>
+                    <td class="text-center">{{ $index + 1}}</td>
+                    <td>{{ emp.FirstName}}</td>
+                    <td>{{ emp.LastName}}</td>
+                    <td>{{ emp.Salary | number: '1.2-2'}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="container mt-5">
+        <b>Page Routes</b>
     </div>
     <div class="text-center">
         <button routerLink="/" type="button" class="btn btn-primary m-1">Home</button>

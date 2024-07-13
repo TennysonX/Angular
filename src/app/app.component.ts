@@ -1,10 +1,12 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
+import { first } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink, DatePipe],
+  imports: [RouterOutlet,RouterLink, DatePipe,DecimalPipe,ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -26,4 +28,11 @@ export class AppComponent {
   ]
 
   now = new Date()
+  number = 1500.5
+
+  empList = [
+    { FirstName: "A", LastName: "Yen", Salary: "18000.5"},
+    { FirstName: "B", LastName: "Hern", Salary: "18000.25"},
+    { FirstName: "C", LastName: "Lek", Salary: "18000.00001"}
+  ]
 }
