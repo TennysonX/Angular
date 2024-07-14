@@ -58,16 +58,26 @@ export class AppComponent {
     console.log('--- onGetAll ---')
 
     let url = 'https://669338d0c6be000fa07a1a18.mockapi.io/todo/v1/topic'
-    this.http.get(url).subscribe{
+    this.http.get(url).subscribe(
       {
         next: (result) => {
           console.log(result)
         }
       }
-    }
+    )
   }
   onGetById(){
     console.log('--- onGetById---')
+
+    let id = 10
+    let url = `https://669338d0c6be000fa07a1a18.mockapi.io/todo/v1/topic/${id}`
+    this.http.get(url).subscribe(
+      {
+        next: (result) => {
+          console.log(result)
+        }
+      }
+    )
   }
   onPost(){
     console.log('--- onPost ---')
