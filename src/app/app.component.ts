@@ -54,6 +54,9 @@ export class AppComponent {
   }
 
   // API 
+
+  service_path = 'https://669338d0c6be000fa07a1a18.mockapi.io/todo/v1/topic'
+
   onGetAll(){
     console.log('--- onGetAll ---')
 
@@ -70,7 +73,7 @@ export class AppComponent {
     console.log('--- onGetById---')
 
     let id = 10
-    let url = `https://669338d0c6be000fa07a1a18.mockapi.io/todo/v1/topic/${id}`
+    let url = `${this.service_path}/${id}`
     this.http.get(url).subscribe(
       {
         next: (result) => {
@@ -81,11 +84,37 @@ export class AppComponent {
   }
   onPost(){
     console.log('--- onPost ---')
+    let url = `${this.service_path}`
+    let body = {
+      "topic": "Post Updated!!!"
+    }
+    this.http.post(url, body).subscribe({
+      next: (result) => {
+        console.log(result)
+      }
+    })
   }
   onPut(){
     console.log('--- onPut ---')
+    let id = 12
+    let url = `${this.service_path}/${id}`
+    let body = {
+      "topic": "Put Success!!"
+    }
+    this.http.put(url, body).subscribe({
+      next: (result) => {
+        console.log(result)
+      }
+    })
   }
   onDelete(){
     console.log('--- onDelete ---')
+    let id = 13
+    let url = `${this.service_path}/${id}`
+    this.http.delete(url).subscribe({
+      next: (result) => {
+        console.log(result)
+      }
+    })
   }
 }
