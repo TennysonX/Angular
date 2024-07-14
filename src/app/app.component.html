@@ -4,23 +4,23 @@
     <div class="text-center">
     <b>On Click Image</b>
     </div>
-    <div class="container text-center" (click)="onimageClick()">
+    <div class="container text-center " (click)="onimageClick()">
         <img [src]="imageCoverUrl" class="rounded">
     </div>
-    <div class="container mt-5">
+    <div>
         <label for="name">Name: </label>
-        <input id= "name" type="text"[formControl]='name'>
-        <p>Name: {{name.value}}</p>
+        <input class="form-control" id="name" type="text" [formControl]="name">
+        <p>Name: {{ name.value }}</p>
     </div>
-    <div class="container mt-5">
+    <div>
         <form [formGroup]="profileForm" (ngSubmit)="profileFormSubmit()">
-            <label for="first-Name">First name:</label>
-            <input id="first-Name" type="text" formControlName="firstName">
+            <label for="first-name">First Name: </label>
+            <input class="form-control" id="first-name" type="text" formControlName="firstName">
 
-            <label for="last-Name">Last name:</label>
-            <input id="last-Name" type="text" formControlName="lastName">
+            <label for="last-name">Last Name: </label>
+            <input class="form-control" id="last-name" type="text" formControlName="lastName">
 
-            <button type="submit"[disabled]="!profileForm.valid">Submit</button>
+            <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
         </form>
     </div>
         <div class="container mt-5">
