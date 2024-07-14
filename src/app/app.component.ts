@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import {ReactiveFormsModule, FormControl, FormGroup, Validators} from '@angular/forms';
 import { first } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -47,4 +48,34 @@ export class AppComponent {
     { FirstName: "B", LastName: "Hern", Salary: "18000.25"},
     { FirstName: "C", LastName: "Lek", Salary: "18000.00001"}
   ]
+
+  constructor(private http: HttpClient){
+
+  }
+
+  // API 
+  onGetAll(){
+    console.log('--- onGetAll ---')
+
+    let url = 'https://669338d0c6be000fa07a1a18.mockapi.io/todo/v1/topic'
+    this.http.get(url).subscribe{
+      {
+        next: (result) => {
+          console.log(result)
+        }
+      }
+    }
+  }
+  onGetById(){
+    console.log('--- onGetById---')
+  }
+  onPost(){
+    console.log('--- onPost ---')
+  }
+  onPut(){
+    console.log('--- onPut ---')
+  }
+  onDelete(){
+    console.log('--- onDelete ---')
+  }
 }

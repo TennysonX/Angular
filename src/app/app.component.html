@@ -7,6 +7,13 @@
     <div class="container text-center " (click)="onimageClick()">
         <img [src]="imageCoverUrl" class="rounded">
     </div>
+    <div class="container text-center">
+        <button class="mt-2 mb-2 btn btn-primary btn-custom" (click)="onGetAll()">Get All</button>
+        <button class="mt-2 mb-2 btn btn-primary btn-custom" (click)="onGetById()">Get ID</button>
+        <button class="mt-2 mb-2 btn btn-primary btn-custom" (click)="onPost()">Post</button>
+        <button class="mt-2 mb-2 btn btn-primary btn-custom" (click)="onPut()">Put</button>
+        <button class="mt-2 mb-2 btn btn-primary btn-custom" (click)="onDelete()">Delete</button>
+    </div>
     <div>
         <label for="name">Name: </label>
         <input class="form-control" id="name" type="text" [formControl]="name">
